@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo '<b>NEW STRING' . $data . '<br />';
     }
 
-if ($result = $conn->query( "SELECT name from customers WHERE surname = '$data' ")){ #dynamic_query
+if ($result = $conn->query( "SELECT name, company FROM customers WHERE company = '$data' ")){ #dynamic_query
       echo "<br/>";
       while($row = mysqli_fetch_array($result))
       {
