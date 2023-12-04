@@ -1,0 +1,5 @@
+SELECT flag from users WHERE surname = '$data'
+SELECT name from customers WHERE surname = '$data'
+SELECT name, company FROM customers WHERE company = '$data'
+SELECT name, company, surname FROM customers WHERE company
+    = '$data'
