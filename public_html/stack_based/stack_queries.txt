@@ -1,0 +1,4 @@
+SELECT surname FROM users WHERE surname = '$data'
+SELECT username, surname FROM users WHERE username = '$data'
+SELECT username, surname, flag FROM users WHERE username = '$data'
+SELECT username, surname, flag, password FROM users WHERE username = '$data'
