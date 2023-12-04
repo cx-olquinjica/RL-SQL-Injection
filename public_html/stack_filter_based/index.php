@@ -1,5 +1,6 @@
 <?php
 
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -17,7 +18,7 @@ $mydatabase = 'dbtest';
 // this file used to be called union_filter_1.php
 // check the mysql connection status
 $conn = new mysqli($host, $user, $pass, $mydatabase);
-echo '<form action="union_filter_1.php" method="post">';
+echo '<form action="stack_filter_1.php" method="post">';
 echo 'Name: <input type="text" name="name">';
 echo 'E-mail: <input type="text" name="email">' ;
 echo '<input type="submit">';
@@ -37,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo '<b>NEW STRING' . $data . '<br />';
     }
 
-if ($result = $conn->query( "SELECT name, company FROM customers WHERE company = '$data' ")){ #dynamic_query
+if ($result = $conn->query( "SELECT surname FROM users WHERE surname = '$data' ")){ #dynamic_query
       echo "<br/>";
       while($row = mysqli_fetch_array($result))
       {
@@ -46,7 +47,8 @@ if ($result = $conn->query( "SELECT name, company FROM customers WHERE company =
       echo "<b>Surname: </b>" . $row['surname'] . "<br />";
       }
       echo "Returned rows are: " . $result -> num_rows;
-    }
- }
-   $conn->close();
-   ?>
+    } } 
+$conn->close();
+
+ ?> 
+
